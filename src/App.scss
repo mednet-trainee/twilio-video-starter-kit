@@ -10,6 +10,17 @@
   font-size: 1.25em;
 }
 
+.manual-slash-icon:after {
+  content: "/";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.7em; 
+  color: black;
+  font-weight: bold;
+}
+
 .participants {
   display:flex;
   flex-wrap:wrap;
@@ -18,17 +29,31 @@
 }
 
 .participant {
-  box-sizing: border-box;
-  position: relative;
-  border-radius: 8px;
-  margin-left: .75vw;
-  margin-bottom: .75vw;
-  width: 23.5vw;
-  overflow: hidden;
-  height: 50vh;
-  -webkit-mask-image: -webkit-radial-gradient(white, black); 
-  display: flex;
-  justify-content: center;
+  top: 30px;
+  height: 120px;
+  position: absolute;
+  right: 10px;
+  width: 230px;
+  transform: scaleX(-1);
+  z-index: 100;
+  
+}
+.participant video{
+  border-radius: 5px !important;
+  float: left !important;
+  height: 100% !important;
+  width: 100% !important;
+}
+
+.remoteParticipant{
+  position:relative;
+
+}
+
+
+.remoteParticipant video{
+  width:100% !important;
+  border-radius:15px !important;
 }
 
 .identity {
@@ -41,25 +66,47 @@
   z-index: 10;
 }
 
+.localParticipant{
+  position: absolute;
+  right:0;
+  height: 50%;
+}
+
 video {
   display: block;
-  box-shadow: 0px 0px 15px 5px #ddd;
+ // box-shadow: 0px 0px 15px 5px #ddd;
   -webkit-transform: scale(-1, 1);
   transform: scale(-1, 1);
 }
 
-button {
-  background-color: #fe019a;
-  font-weight: bold;
-  display: block;
-  margin: 0 auto;
-  color: white;
-  border: none;
-  padding: 15px;
-  border-radius: 5px;
-  width: 200px;
-  cursor: pointer;
-  font-size: 1em;
+// button {
+//   background-color: #fe019a;
+//   font-weight: bold;
+//   display: block;
+//   margin: 0 auto;
+//   color: white;
+//   border: none;
+//   padding: 15px;
+//   border-radius: 5px;
+//   width: 200px;
+//   cursor: pointer;
+//   font-size: 1em;
+// }
+
+button{
+  border-radius: 100% !important;
+  font-size: 24px !important;
+  height: 50px !important;
+  text-align: center !important;
+  width: 50px !important;
+  cursor: pointer !important;
+  float: left !important;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px; 
 }
 
 button:disabled {
@@ -67,10 +114,65 @@ button:disabled {
   cursor:initial;
 }
 
-#leaveRoom {
-  margin-top: 25px;
-  margin-left: 0;
+// #leaveRoom {
+//   position: absolute;
+//   bottom: 25px;
+//   z-index: 999;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+.videoCamera {
+  background: #fff none repeat scroll 0 0;
+  color: #000;
 }
+
+.widthFullDiv{
+  float:left;
+  width:100%;
+}
+
+.widthFullDiv div{
+  float:left;
+}
+.middleIconDiv {
+  float: none !important;
+  margin: 0 auto !important;
+  width: 192px;
+}
+
+.buttonCommonDiv{
+  border-radius: 100% !important;
+  font-size: 24px !important;
+  height: 50px !important;
+  text-align: center !important;
+  width: 50px !important;
+  cursor:pointer !important;
+  float:left !important;
+}
+
+.microphone {
+  background: #fff none repeat scroll 0 0;
+  color: #000;
+}
+
+.relative{
+  position:relative;
+}
+
+.callDiscDiv {
+  background: red none repeat scroll 0 0;
+  color: #fff;
+}
+
+.circleButtonBottomDiv_smallScreen{
+    width:100%;
+    position: absolute;
+    bottom:25px;
+    z-index: 999;
+}
+  
 
 input {
   padding-bottom: 5px;
@@ -82,6 +184,53 @@ input {
   font-size: 1em;
   text-align: center;
   border-radius: 0;
+}
+
+.commonPopupOuter {
+  height: 100%;
+  left: 0 !important;
+  margin: 0 !important;
+  position: fixed;
+  top: 0 !important;
+  width: 100%;
+  z-index: 9999;
+}
+
+.commonPopupHeader {
+  border-bottom: 1px solid #e8e8e8;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  line-height: 40px;
+  padding: 0 10px;
+  width: 100%;
+}
+
+.disconnectButton{
+  float:none;
+  margin: 0 auto;
+  width: 200px;
+  position: absolute;
+  bottom: 25px;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.frontScreen{
+  margin-left: 10px;
+}
+
+.videoControl{
+  width: 100%;
+  position: absolute;
+  bottom: 25px;
+  z-index: 999;
+}
+
+.buttonControl{
+    float: none !important;
+    margin: 0 auto !important;
+    width: 192px;
 }
 
 @media (max-width: 1048px) {
@@ -106,3 +255,4 @@ input {
   }
 
 }
+

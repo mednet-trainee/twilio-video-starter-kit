@@ -1,8 +1,21 @@
 import './App.scss';
-import React, {Component} from 'react';
+import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-class App extends Component {
+import Front from './Front';
+import VideoCall from './VideoCall';
+
+
+function App() {
+    return (
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Front />}></Route>
+          <Route path="/patientVideoCall/:patientMrn/:patientEncounterID" element={<VideoCall/>} />          
+        </Routes>
+      </BrowserRouter>
+    );
+  }
   
-}
-
-export default App;
+  export default App;
+  
